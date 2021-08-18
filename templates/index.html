@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div>
+        <h2>PREDICT HEART ATTACK</h2>
+        <form action="{{ url_for('predict')}}" method="post" id="border";>
+            <h3>Sex</h3>
+            <select name="sex" id="first" required="required">
+                <option value="" disabled selected hidden>Please Choose...</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+            <br>
+            
+            
+            <h3>Chest Pain type?</h3>
+            <select name="cp" id="second" required="required">
+                <option value="" disabled selected hidden>Please Choose...</option>
+                <option value="0">Typical Angina</option>
+                <option value="1">Atypical Angina</option>
+                <option value="2">Non-Anginal Pain</option>
+                <option value="3">Asymptomatic</option>
+            </select>
+            <br>
+            
+            
+            <h3>Exercise Induced Angina?</h3>
+            <select name="exeng" id="third" required="required">
+                <option value="" disabled selected hidden>Please Choose...</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>  
+            </select>   
+            <br>
+            
+            
+            <h3>Maximum Heart Rate Achieved?</h3>
+            <input id="fourth" name="thalachh" type="number " placeholder="Type Here..." >
+            <br>
+            
+            
+            <h3>Previous peak?</h3>
+            <input id="fifth" name="oldpeak" type="number " placeholder="Type Here...">     
+            <br>
+            
+            
+            <h3>Slope?</h3>
+            <select name="slp" id="sixth" required="required">
+                <option value="" disabled selected hidden>Please Choose...</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>  
+            </select> 
+            <br>
+            
+            
+            <h3>Number of Major Vessels?</h3>
+            <select name="caa" id="seventh" required="required">
+                <option value="" disabled selected hidden>Please Choose...</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <br>
+            
+            
+            <h3>Thalium Stress Test result?</h3>
+            <select name="thall" id="eight" required="required">
+                <option value="" disabled selected hidden>Please Choose...</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>   
+            </select>   
+            <br>
+            
+            
+            <br><br><button id="sub" type="submit ">Predict</button>
+            <h3 id='pred'>{{ prediction_text }}<h3>
+                
+            </form>
+            
+            <form action="{{ url_for('refresh')}}" method = 'post'>
+                <button id="sub" type="submit"  >Refresh</button>
+            </form>
+        
+    </div>
+    
+    <style>
+        body {
+            background-color: black;
+            text-align: center;
+            padding: 0px;
+            align-items: center;
+            color:white;
+            font-size: 20px;
+        } 
+        #border {
+            box-sizing: border-box;
+            left: 35%;
+            background-color: #3500d3;
+            bottom: 0;
+            position: relative;
+            width: 30%;
+            align-self: center;
+            padding:2px
+        }
+
+        #sub {
+            position: relative;
+            background-color: #282828;
+            border: none;
+            font-size: 20px;
+            color: white;
+            padding: 5px;
+            width: 100px;
+            text-align: center;
+ 
+            overflow: hidden;
+            cursor: pointer;
+            }
+
+
+        #sub:hover {
+            background-color: #950740;
+            transform: scale(1.5);;
+        }
+
+        #pred {
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+            font-size: 30px;
+        }
+    </style>
+</body>
+</html>
